@@ -616,6 +616,8 @@ void CSGShape::_bind_methods() {
 	BIND_ENUM_CONSTANT(OPERATION_UNION);
 	BIND_ENUM_CONSTANT(OPERATION_INTERSECTION);
 	BIND_ENUM_CONSTANT(OPERATION_SUBTRACTION);
+
+	ClassDB::bind_method(D_METHOD("get_root_mesh"), &CSGShape::get_root_mesh);
 }
 
 CSGShape::CSGShape() {
@@ -636,6 +638,10 @@ CSGShape::~CSGShape() {
 		memdelete(brush);
 		brush = NULL;
 	}
+}
+
+Ref<ArrayMesh> CSGShape::get_root_mesh(){
+	return root_mesh;
 }
 //////////////////////////////////
 

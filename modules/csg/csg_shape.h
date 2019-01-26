@@ -149,6 +149,8 @@ public:
 	bool is_root_shape() const;
 	CSGShape();
 	~CSGShape();
+
+	Ref<ArrayMesh> get_root_mesh();
 };
 
 VARIANT_ENUM_CAST(CSGShape::Operation)
